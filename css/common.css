@@ -1,84 +1,92 @@
 @charset "utf-8";
 
-/* 초기값, 공통요소(제목, 버튼, 폰트스타일), 웹폰트 */
+/* 웹폰트 */
+/* 초기값 li, a, body ... */
+/* 공통스타일 title, header... */
+
 
 @font-face {
-    font-family: 'KIMM_Bold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KIMM_Bold.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
-
-
-    font-family: 'NEXON Lv1 Gothic OTF';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
-    font-weight: normal;
+    font-family: 'KorailRoundGothicBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KorailRoundGothicBold.woff2') format('woff2');
+    font-weight: 300;
     font-style: normal;
 }
 
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'NEXON Lv1 Gothic OTF';
-    font-weight: 300;
 }
-
-a {
+li{
+    list-style: none;
+}
+a{
     text-decoration: none;
     color: inherit;
 }
-
-li {
-    list-style: none;
-}
-
-body {
-    min-width: 1920px;
+body{
+    font-family: 'KorailRoundGothicBold';
     color: #333;
     line-height: 1;
+    margin-bottom: 60px;
 }
-
-/* 공통 스타일 */
-.inner {
-    width: 1440px;
+.inner{
+    width: 1280px;
+/*     width: calc(100% - 40PX); */
     margin: 0 auto;
 }
-
-.title {
-    margin-bottom: 40px;
+.title{
+    margin-bottom:  13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title h3{
+    font-size: 20px;
 }
 
-.title h3 {
-    font-size: 50px;
-    margin-bottom: 16px;
-    font-weight: bold;
-}
-
-.title p {
-    font-size: 18px;
-}
-
-.btn li:nth-child(1) {
-    height: 40px;
-    line-height: 40px;
-    background-color: skyblue;
-    color: #fff;
-    padding: 0 18px;
-    border-radius: 40px;
-    display: inline-block;
-}
-
-.btn li:nth-child(2) {
-    height: 40px;
-    line-height: 40px;
-    background-color: lightblue;
-    color: #555;
-    padding: 0 18px;
-    border-radius: 40px;
-    display: inline-block;
-}
-
-.swiper {
+/* header 시작 */
+header {
+    z-index: 9;
+    position: absolute;
+    left: 0;
+    top: 50px;
     width: 100%;
+}
+header h1 {
+    font-size: 30px;
+}
+header nav ul{
+    display: flex;
+    margin-top: 15px;
+}
+header nav ul li{
+    margin-right: 15px;
+}
+
+/* bottom_menu 시작 */
+.bottom_menu{
+    width: 100%;
+    height: 55px;
+    border-radius: 15px 15px 0 0 ;
+    box-shadow: 0 4px 15px  rgba(51, 51, 51, 0.25);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+}
+.bottom_menu ul {
     height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+.bottom_menu ul li a{
+    display: flex;
+}
+
+/* 뷰포트 화면 1280px 이하일때 스타일 적용 */
+@media screen and (max-width: 1280px) {
+    .inner {width: calc(100% - 40px);}
 }
